@@ -41,13 +41,13 @@ var config = {attributes: true, childList: true, subtree: true};
 
 var channel_observer = new MutationObserver(function(){
 	//	Cleans new window
-	console.log("hop");
+	// console.log("hop");
 	clean();
 	//	declares msgs to be the new chat.
 	msgs = document.getElementsByClassName("messagesWrapper-3lZDfY")[0];
 	//	Need to make or disable an observer
 	if(observer == -1) {
-		console.log("no observer");
+		// console.log("no observer");
 		observer = new MutationObserver(callback_HTML_test);
 	} else {
 		//	Need to disable the previous observer
@@ -68,13 +68,13 @@ var server_observer = new MutationObserver(function() {
 	var new_name = document.getElementsByClassName("name-3YKhmS")[0].innerText;
 	if(name != new_name) {
 		name = new_name;
-		console.log("hop");
+		// console.log("hop");
 		clean();
 		//	declares msgs to be the new chat.
 		msgs = document.getElementsByClassName("messagesWrapper-3lZDfY")[0];
 		//	Need to make or disable an observer
 		if(observer == -1) {
-			console.log("no observer");
+			// console.log("no observer");
 			observer = new MutationObserver(callback_HTML_test);
 		} else {
 			//	Need to disable the previous observer
@@ -114,7 +114,7 @@ function callback_HTML_test(mutationsList,observer) {
 		if(node.type == "childList" ) {
 			if(node.addedNodes.length != 0) {
 				var mg = node.addedNodes[0];
-				console.log(mg.className);
+				// console.log(mg.className);
 				var embeded_previews = mg.getElementsByClassName("embed-IeVjo6 embedWrapper-3AbfJJ");
 				if(embeded_previews.length != 0) {
 					var embeded = embeded_previews[0];
